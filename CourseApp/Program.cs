@@ -4,18 +4,30 @@ namespace CourseApp
 {
     public class Program
     {
+        public static double Equat(double a, double b, double x)
+        {
+            return (a + Math.Pow(Math.Tan(b * x), 2.0)) / (b + (1.0 / Math.Pow(Math.Tan(a * x), 2)));
+        }
+
         public static double[] TaskA(double a, double b, double xn, double xk, double dx)
         {
-            int j = 0;
-            var y = new double[5];
-
-            for (var i = xn; i < xk; i += dx)
+            if (xk < xn)
             {
-                y[j] = (a + Math.Pow(Math.Tan(b * i), 2.0)) / (b + (1.0 / Math.Pow(Math.Tan(a * i), 2)));
-                j++;
+                return new double[0];
             }
+            else
+            {
+                int size = (int)Math.Floor((xk - xn) / dx);
+                double[] rtrn = new double[size + 1];
+                size = 0;
+                for (double x = xn; x < xk; x += dx)
+                {
+                    rtrn[size] = Equat(a, b, x);
+                    size++;
+                }
 
-            return y;
+                return rtrn;
+            }
         }
 
         public static double[] TaskB(double a, double b, double[] x)
