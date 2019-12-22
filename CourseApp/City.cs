@@ -22,7 +22,7 @@ namespace CourseApp
         }
 
         public City(string name, int population, int square)
-        :base(name, population, square)
+        : base(name, population, square)
         {
             Name = name;
             Population = population;
@@ -63,6 +63,7 @@ namespace CourseApp
                 }
             }
         }
+
         public override string ToString()
         {
             return $"Name of City:{Name},Population of City:{Population}, Square of City:{Square}";
