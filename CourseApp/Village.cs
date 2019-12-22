@@ -22,6 +22,7 @@ namespace CourseApp
         }
 
         public Village(string name, int population, int square)
+        :base(name, population, square)
         {
             Name = name;
             Population = population;
@@ -61,6 +62,11 @@ namespace CourseApp
                     throw new System.Exception("Wrong square");
                 }
             }
+        }
+        
+        public override string ToString()
+        {
+            return $"Name of Village:{Name},Population of Village:{Population}, Square of Village:{Square}";
         }
     }
 }

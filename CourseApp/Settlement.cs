@@ -20,11 +20,16 @@ namespace CourseApp
         }
 
         public Settlement(string name, int population)
+        :this(name, population, 0)
+        {
+        }
+
+        public Settlement(string name, int population, int square)
         {
             Name = name;
             Population = population;
+            Square = square;
         }
-
         public string Name { get; set; }
 
         public virtual int Population
