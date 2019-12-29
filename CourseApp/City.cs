@@ -22,12 +22,23 @@ namespace CourseApp
         }
 
         public City(string name, int population, int square)
-        : base(name, population, square)
+        : this(name, population, square, false)
         {
             Name = name;
             Population = population;
             Square = square;
         }
+
+        public City(string name, int population, int square, bool isCapital)
+        : base(name, population, square)
+        {
+            Name = name;
+            Population = population;
+            Square = square;
+            IsCapital = isCapital;
+        }
+
+        public bool IsCapital { get; set; }
 
         public override int Population
         {
